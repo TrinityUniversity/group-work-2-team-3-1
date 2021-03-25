@@ -3,18 +3,20 @@ package actors
 import akka.actor.Actor
 import akka.actor.Props
 import akka.actor.ActorRef
-import models.CountingModel
 
 class CountingManager extends Actor {
   private var counters = List.empty[ActorRef]
+  private var counter: Int = 0
 
   import CountingManager._
   def receive = {
-    case NewCounter(counter) => counters ::= counter
+    case NewCounter(actor) => {
+      counters ::= actor
+      actor ! CountingActor.UpdateCounter(counter)
+    }
     case IncrementCounter => {
-      CountingModel.incrementCounter()
-      val newValue = CountingModel.getCounter()
-      for (c <- counters) c ! CountingActor.UpdateCounter(newValue)
+      counter += 1
+      for (c <- counters) c ! CountingActor.UpdateCounter(counter)
     }
     case m => println(s"Manager received $m")
   }

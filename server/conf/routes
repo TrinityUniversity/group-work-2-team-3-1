@@ -7,6 +7,7 @@ GET        /                             controllers.Application.index
 GET        /counter/get                  controllers.Application.getCounter
 + nocsrf
 POST       /counter/increment            controllers.Application.incrementCounter
+GET        /countersocket                controllers.Application.socket
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

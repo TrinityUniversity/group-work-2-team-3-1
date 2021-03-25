@@ -10,9 +10,10 @@ class CountingActor(out: ActorRef, manager: ActorRef) extends Actor {
   import CountingActor._
   def receive = {
     case UpdateCounter(value) => {
-      out ! value
+      out ! value.toString()
     }
     case IncrementCounter => manager ! CountingManager.IncrementCounter
+    case m: String => self ! IncrementCounter
     case m => println("Unexpected message in CountingActor: " + m)
   }
 }
