@@ -33,4 +33,8 @@ class Application @Inject()(cc: ControllerComponents)(implicit system: ActorSyst
       CountingActor.props(out, manager)
     }
   }
+
+  def react = Action {
+    Ok(views.html.basic())
+  }
 }
