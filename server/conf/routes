@@ -9,6 +9,7 @@ GET        /counter/get                  controllers.Application.getCounter
 POST       /counter/increment            controllers.Application.incrementCounter
 GET        /countersocket                controllers.Application.socket
 GET        /react                        controllers.Application.react
+GET        /relationships                controllers.Application.relationships
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

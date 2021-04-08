@@ -1,0 +1,10 @@
+@(relationships: Seq[(String, String, String)])
+
+@main("Relationships") {
+  <h1>Relationships</h1>
+  <ul>
+    @for((u1, u2, relation) <- relationships) {
+      <li>@u1, @u2, @relation</li>
+    }
+  </ul>
+}
