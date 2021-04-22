@@ -10,6 +10,9 @@ POST       /counter/increment            controllers.Application.incrementCounte
 GET        /countersocket                controllers.Application.socket
 GET        /react                        controllers.Application.react
 GET        /relationships                controllers.Application.relationships
+GET        /oneMessage                   controllers.Application.oneMessage
++ nocsrf
+POST       /oneMessage/post              controllers.Application.oneMessagePost
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

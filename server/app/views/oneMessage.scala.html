@@ -1,0 +1,16 @@
+@()
+
+@main("One Message") {
+  <h1 id="oneMessage">One Message</h1>
+
+  <h2>Compose a Message</h2>
+  <label for="author">Author</label>
+  <input id="authorLabel" type="text" name="author">
+  <label for="Body">Body</label>
+  <input id="bodyLabel" type="text" name="body">
+  <input id="postButton" type="button" value="Post Message">
+
+  <h2>Last Message</h2>
+  <h3 id="lastMessageAuthorLabel"></h3>
+  <p id="lastMessageBodyLabel"></p>
+}
