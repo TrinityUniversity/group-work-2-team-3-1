@@ -13,6 +13,7 @@ GET        /relationships                controllers.Application.relationships
 GET        /oneMessage                   controllers.Application.oneMessage
 + nocsrf
 POST       /oneMessage/post              controllers.Application.oneMessagePost
+GET        /slinky                       controllers.Application.slinky
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

@@ -11,6 +11,8 @@ import org.scalajs.dom.experimental._
 import scala.scalajs.js.Thenable.Implicits._
 import scala.scalajs.js.JSON
 import play.api.libs.json._
+import slinky.web.ReactDOM
+import slinky.web.html._
 
 object ScalaJSExample {
   implicit val ec = ExecutionContext.global
@@ -19,10 +21,12 @@ object ScalaJSExample {
   def main(args: Array[String]): Unit = {
     // dom.document.getElementById("scalajsShoutOut").textContent = SharedMessages.itWorks
     // println("Call the react stuff.")
-    // ReactDOM.render(
-    //   h1("Hello, world!"),
-    //   dom.document.getElementById("root")
-    // )
+    if (document.getElementById("slinky") != null) {
+      ReactDOM.render(
+        OneMessageComponent (),
+        dom.document.getElementById("root")
+      )
+    }
 
     // println("Counting time!")
     // for (i <- 1 to 10) {

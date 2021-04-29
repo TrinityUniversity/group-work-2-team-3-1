@@ -70,4 +70,8 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
       }
     }.getOrElse(BadRequest("Bad"))
   }
+
+  def slinky = Action {
+    Ok(views.html.slinky())
+  }
 }
